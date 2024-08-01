@@ -13,6 +13,8 @@ void push(stack_t **stack, unsigned int line_number, int n)
 {
 	stack_t *new_node; /* new node to be pushed */
 
+	(void)line_number; /* unused */
+
 	new_node = malloc(sizeof(stack_t)); /* malloc for new node */
 	if (!new_node) /* if malloc fails, exit with specified error */
 	{
