@@ -14,8 +14,8 @@ int main(int argc, char *argv[])
 	char *line = NULL; /* line to read from file */
 	size_t len = 0; /* length of line */
 	ssize_t read; /* return value of getline */
-	stack_t *stack = NULL; /* head of stack */
 	unsigned int line_number = 0; /* current line number */
+	stack_t *stack = NULL; /* head of stack */
 	char *opcode; /* operation code to execute */
 
 	if (argc != 2) /* if number of arguments isnt 2 */
@@ -23,14 +23,12 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-
 	file = fopen(argv[1], "r"); /* open file for reading */
 	if (!file) /* if file cannot be opened */
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-
 	while ((read = getline(&line, &len, file)) != -1) /* read line from file */
 	{
 		line_number++; /* increment line number */
@@ -39,3 +37,8 @@ int main(int argc, char *argv[])
 			continue; /* skip that line */
 		execute_instruction(opcode, &stack, line_number); /* execute opcode */
 	}
+	free(line); /* free line buffer */
+	fclose(file); /* close file */
+	free_stack(stack); /* free stack */
+	return (EXIT_SUCCESS);
+}
