@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 		opcode = strtok(line, " \t\n"); /* get opcode */
 		if (!opcode || opcode[0] == '#') /* if no opcode or comment */
 			continue; /* skip that line */
-		execute_instruction(opcode, &stack, line_number); /* execute opcode */
+		exec_instructs(opcode, &stack, line_number); /* execute opcode */
 	}
 	free(line); /* free line buffer */
 	fclose(file); /* close file */

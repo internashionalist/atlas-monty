@@ -3,7 +3,7 @@
 /**
  * is_digit - checks if a string is a digit
  * @str: string to check
- * 
+ *
  * Return: 1 if number, 0 if not
  */
 
@@ -22,15 +22,15 @@ int is_digit(char *str)
 }
 
 /**
- * execute_instruction - executes the opcode given
+ * exec_instruct - executes the opcode given
  * @opcode: opcode to execute
  * @stack: double pointer to head of stack
  * @line_number: current line number in bytecode file
- * 
+ *
  * Return: void
  */
 
-void execute_instruction(char *opcode, stack_t **stack, unsigned int line_number)
+void exec_instruct(char *opcode, stack_t **stack, unsigned int line_number)
 {
 	char *arg; /* argument to push */
 
@@ -52,4 +52,3 @@ void execute_instruction(char *opcode, stack_t **stack, unsigned int line_number
 		exit(EXIT_FAILURE);
 	}
 }
-	
