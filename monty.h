@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
 
 /* Structs */
 
@@ -46,5 +45,6 @@ void push(stack_t **stack, unsigned int line_number, int n);
 void pall(stack_t **stack, unsigned int line_number);
 int is_digit(char *str);
 void execute_instruction(char *opcode, stack_t **stack, unsigned int line_number);
+void free_stack(stack_t *stack);
 
-#endif
+#endif /* MONTY_H */
