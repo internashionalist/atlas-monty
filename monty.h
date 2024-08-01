@@ -45,6 +45,7 @@ void push(stack_t **stack, unsigned int line_number, int n);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
 int is_digit(char *str);
 void exec_instruct(char *opcode, stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *stack);

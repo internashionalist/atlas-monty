@@ -45,12 +45,14 @@ void exec_instruct(char *opcode, stack_t **stack, unsigned int line_number)
 		push(stack, line_number, atoi(arg)); /* push the number */
 	}
 	else if (strcmp(opcode, "pall") == 0) /* if we pallin */
-		pall(stack, line_number); /* pall the stack */
+		pall(stack, line_number); /* pall it! */
 	else if (strcmp(opcode, "pint") == 0) /* if we pintin */
-		pint(stack, line_number); /* pint the stack */
+		pint(stack, line_number); /* pint it! */
 	else if (strcmp(opcode, "pop") == 0) /* if we poppin */
-		pop(stack, line_number); /* pop the stack */
-	else /* if we don't know what we're doin */
+		pop(stack, line_number); /* pop it! */
+	else if (strcmp(opcode, "swap") == 0) /* if we swappin */
+		swap(stack, line_number); /* swap it! */
+	else /* AHHHHHHHhhhhhhhh (in BopIt voice) */
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 		exit(EXIT_FAILURE);
