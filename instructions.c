@@ -46,7 +46,9 @@ void exec_instruct(char *opcode, stack_t **stack, unsigned int line_number)
 	}
 	else if (strcmp(opcode, "pall") == 0) /* if we pallin */
 		pall(stack, line_number); /* pall the stack */
-	else /* if we don't know what we doin */
+	else if (strcmp(opcode, "pint") == 0) /* if we pintin */
+		pint(stack, line_number); /* pint the stack */
+	else /* if we don't know what we're doin */
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 		exit(EXIT_FAILURE);
