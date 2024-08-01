@@ -26,6 +26,8 @@ int is_digit(char *str)
  * @opcode: opcode to execute
  * @stack: double pointer to head of stack
  * @line_number: current line number in bytecode file
+ * 
+ * Return: void
  */
 
 void execute_instruction(char *opcode, stack_t **stack, unsigned int line_number)
