@@ -30,7 +30,24 @@ int is_digit(char *str)
 
 void execute_instruction(char *opcode, stack_t **stack, unsigned int line_number)
 {
+	char *arg; /* argument to push */
+
 	if (strcmp(opcode, "push") == 0) /* if we pushin */
 	{
-		char *arg; /* argument to push */
-		
+		arg = strtok(NULL, " \t\n"); /* get arg, minus delims */
+		if (!arg || !is_digit(arg)) /* if no arg or not a number */
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
+		}
+		push(stack, line_number, atoi(arg)); /* push the number */
+	}
+	else if (strcmp(opcode, "pall") == 0) /* if we pallin */
+		pall(stack, line_number); /* pall the stack */
+	else /* if we don't know what we doin */
+	{
+		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+		exit(EXIT_FAILURE);
+	}
+}
+	
