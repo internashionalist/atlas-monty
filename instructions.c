@@ -48,6 +48,8 @@ void exec_instruct(char *opcode, stack_t **stack, unsigned int line_number)
 		pall(stack, line_number); /* pall the stack */
 	else if (strcmp(opcode, "pint") == 0) /* if we pintin */
 		pint(stack, line_number); /* pint the stack */
+	else if (strcmp(opcode, "pop") == 0) /* if we poppin */
+		pop(stack, line_number); /* pop the stack */
 	else /* if we don't know what we're doin */
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
