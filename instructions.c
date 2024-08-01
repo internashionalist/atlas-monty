@@ -54,6 +54,9 @@ void exec_instruct(char *opcode, stack_t **stack, unsigned int line_number)
 		swap(stack, line_number); /* swap it! */
 	else if (strcmp(opcode, "add") == 0) /* if we addin */
 		add(stack, line_number); /* add it! */
+	else if (strcmp(opcode, "nop") == 0) /* if we nopin */
+		nop(stack, line_number); /* nop it! */
+
 	else /* AHHHHHHHhhhhhhhh (in BopIt voice) */
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
