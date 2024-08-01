@@ -3,7 +3,7 @@
 /** pint - prints value at top of stack
  * @stack: double pointer to head of stack
  * @line_number: current line number in bytecode file
- * 
+ *
  * Return: void
  */
 
