@@ -44,5 +44,7 @@ typedef struct instruction_s
 
 void push(stack_t **stack, unsigned int line_number, int n);
 void pall(stack_t **stack, unsigned int line_number);
+int is_digit(char *str);
+void execute_instruction(char *opcode, stack_t **stack, unsigned int line_number);
 
 #endif
