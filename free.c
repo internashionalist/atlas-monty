@@ -13,8 +13,8 @@ void free_stack(stack_t *stack)
 
 	while (stack) /* while there are nodes to free */
 	{
-		 current_node = stack; /* start at head, store in current_node */
-		 stack = stack->next; /* move head to next node */
-		 free(current_node); /* free current node, repeat */
+		current_node = stack; /* start at head, store in current_node */
+		stack = stack->next; /* move head to next node */
+		free(current_node); /* free current node, repeat */
 	}
 }
