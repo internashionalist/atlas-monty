@@ -7,11 +7,11 @@
 
 [Synopsis](#synopsis)<br>
 [Description](#description)<br>
-[Authors](#authors)<br>
 [Use Instructions](#use-instructions)<br>
-[Features](#features)<br>
-[Flowchart](#flowchart)<br>
-[Authors](#authors)
+[Opcodes](#opcodes)<br>
+[Error Handling](#error-handling)<br>
+[Example](#example)<br>
+[Author](#author)
 
 ## Synopsis
 
@@ -43,16 +43,16 @@ $ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 ## Opcodes
 ```
 •push
-       - pushes an element to the stack
+	- pushes an element to the stack
 
 •pall
-       - prints all the values on the stack, starting from the top
+	- prints all the values on the stack, starting from the top
 
 •pint
 	- prints the value at the top of the stack
 
 •pop
-       - removes the top element of the stack
+	- removes the top element of the stack
 
 •swap
 	- swaps the top two elements of the stack
@@ -74,6 +74,8 @@ The interpreter prints error messages to stderr and exits with EXIT_FAILURE stat
 - inability to open file
 - invalid instructions
 - stand underflow errors
+```
+
 
 ## Example
 
